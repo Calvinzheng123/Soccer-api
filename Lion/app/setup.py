@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="Lion",            
+    name="LionAPI",            
     version="0.1.0",          # Version number
     description="A FastAPI-based soccer data API",
     author="Calvin Zheng",    
