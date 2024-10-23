@@ -1,0 +1,13 @@
+README.md
+setup.py
+Lion.egg-info/PKG-INFO
+Lion.egg-info/SOURCES.txt
+Lion.egg-info/dependency_links.txt
+Lion.egg-info/entry_points.txt
+Lion.egg-info/requires.txt
+Lion.egg-info/top_level.txt
+routers/__init__.py
+routers/events.py
+services/__init__.py
+services/database.py
+services/sofascore_scrapes.py
