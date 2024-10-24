@@ -1,0 +1,4 @@
+fastapi
+uvicorn
+mysql-connector-python
+requests  # Keep this if you are using it in your code
