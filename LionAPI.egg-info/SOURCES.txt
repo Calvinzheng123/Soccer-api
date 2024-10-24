@@ -1,0 +1,15 @@
+README.md
+setup.py
+LionAPI.egg-info/PKG-INFO
+LionAPI.egg-info/SOURCES.txt
+LionAPI.egg-info/dependency_links.txt
+LionAPI.egg-info/requires.txt
+LionAPI.egg-info/top_level.txt
+app/__init__.py
+app/main.py
+app/routers/__init__.py
+app/routers/events.py
+app/services/__init__.py
+app/services/database.py
+app/services/sofascore_scrapes.py
+tests/test_main.py

@@ -1,31 +1,23 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="LionAPI",            
-    version="0.1.0",          
-    description="A FastAPI-based soccer data API",
-    long_description=open('README.md').read(),
-    long_description_content_type='text/markdown',
-    author="Calvin Zheng",    
-    author_email="calvin.zhng12@gmail.com",  
-    packages=find_packages(),   
-    include_package_data=True,   
+    name='LionAPI',  
+    version='0.1.0',  
+    packages=find_packages(),  
     install_requires=[
-        "fastapi",
-        "uvicorn",
-        "mysql-connector-python",
-        "requests",            
+        'fastapi',
+        'uvicorn',
+        'mysql-connector-python',
+        'requests'
     ],
-    entry_points={
-        'console_scripts': [
-            'lion-api=app.main:app',  
-        ],
-    },
+    author='Calvin Zheng',
+    description='A FastAPI for soccer data',
+    url='https://github.com/Calvinzheng123/Soccer-api',  
     classifiers=[
         'Programming Language :: Python :: 3',
+        'Framework :: FastAPI',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
     ],
-    python_requires='>=3.6',
-    license='MIT',
+    python_requires='>=3.6',  
 )
