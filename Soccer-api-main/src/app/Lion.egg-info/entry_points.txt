@@ -1,2 +1,0 @@
-[console_scripts]
-lion-api = app.main:app
