@@ -2,8 +2,8 @@ from setuptools import setup, find_packages
 
 setup(
     name='LionAPI',  
-    version='0.1.0',  
-    packages=find_packages(),  
+    version='0.1.3',  
+    packages=['LionAPI', 'LionAPI.app', 'LionAPI.routers', 'LionAPI.services'],
     install_requires=[
         'fastapi',
         'uvicorn',
