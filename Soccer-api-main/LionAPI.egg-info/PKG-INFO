@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: LionAPI
+Version: 0.1.0
+Summary: A FastAPI for soccer data
+Home-page: https://github.com/Calvinzheng123/Soccer-api
+Author: Calvin Zheng
+Classifier: Programming Language :: Python :: 3
+Classifier: Framework :: FastAPI
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+License-File: LICENSE.txt
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Requires-Dist: mysql-connector-python
+Requires-Dist: requests

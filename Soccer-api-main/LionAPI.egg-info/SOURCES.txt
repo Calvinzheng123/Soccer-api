@@ -1,0 +1,9 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.py
+LionAPI.egg-info/PKG-INFO
+LionAPI.egg-info/SOURCES.txt
+LionAPI.egg-info/dependency_links.txt
+LionAPI.egg-info/requires.txt
+LionAPI.egg-info/top_level.txt

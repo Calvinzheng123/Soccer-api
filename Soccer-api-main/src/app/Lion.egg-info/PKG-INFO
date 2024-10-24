@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: Lion
+Version: 0.1.0
+Summary: A FastAPI-based soccer data API
+Author: Calvin Zheng
+Author-email: calvin.zhng12@gmail.com
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Requires-Dist: mysql-connector-python
+Requires-Dist: requests
