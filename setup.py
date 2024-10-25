@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='LionAPI',  
-    version='0.1.4',  
+    version='0.1.8',  
     packages=['LionAPI', 'LionAPI.app', 'LionAPI.routers', 'LionAPI.services'],
     install_requires=[
         'fastapi',

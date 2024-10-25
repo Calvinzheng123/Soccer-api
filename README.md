@@ -5,4 +5,4 @@ A FastAPI-based soccer data API that allows you to query soccer events from the 
 ## Installation
 
 ```bash
-pip install LionAPI .
+pip install -e .

@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: LionAPI
-Version: 0.1.4
+Version: 0.1.8
 Summary: A FastAPI for soccer data
 Home-page: https://github.com/Calvinzheng123/Soccer-api
 Author: Calvin Zheng

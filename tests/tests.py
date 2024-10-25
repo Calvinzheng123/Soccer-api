@@ -1,20 +1,14 @@
-import mysql.connector
-from mysql.connector import Error
-import pandas as pd
+from LionAPI.services import get_shots
 
-def create_connection():
-    try:
-        connection = mysql.connector.connect(
-            host='soccer-api.c9sauo86m8mu.us-east-2.rds.amazonaws.com',
-            user='root',    
-            password='Zheng123!',  
-            database='soccer_api'      
-        )
-        if connection.is_connected():
-            print("Connection successful")
-            return connection
-    except Error as e:
-        print(f"Error: {e}")
-        return None
-    
-create_connection()
+if __name__ == "__main__":
+    home_team = "Liverpool"
+    away_team = "Chelsea"
+    match_date = "2024-10-20"  
+
+    result_df = get_shots(home_team, away_team, match_date)
+
+    if result_df is not None:
+        print("Shots data retrieved successfully:")
+        print(result_df)
+    else:
+        print("Failed to retrieve shots data.")

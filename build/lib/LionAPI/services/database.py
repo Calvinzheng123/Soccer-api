@@ -52,7 +52,6 @@ def query_events(start_date: str, end_date: str):
             cursor.execute(query, (start_date, end_date))
             result = cursor.fetchall()
             
-            # Convert the result into a DataFrame
             df = pd.DataFrame(result)
             return df
         except Error as e:
