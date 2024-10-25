@@ -5,9 +5,9 @@ import pandas as pd
 def create_connection():
     try:
         connection = mysql.connector.connect(
-            host='localhost',
+            host='soccer-api.c9sauo86m8mu.us-east-2.rds.amazonaws.com',
             user='root',    
-            password='Zheng123',  
+            password='Zheng123!',  
             database='soccer_api'      
         )
         if connection.is_connected():
@@ -41,7 +41,7 @@ def insert_event(event):
 def query_events(start_date: str, end_date: str):
     connection = create_connection()
     if connection is not None:
-        cursor = connection.cursor(dictionary=True)  # Fetch results as dictionaries
+        cursor = connection.cursor(dictionary=True)  
         try:
             query = """
                 SELECT home_team, away_team, event_id, home_score, away_score,

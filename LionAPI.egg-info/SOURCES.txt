@@ -12,6 +12,7 @@ LionAPI/routers/__init__.py
 LionAPI/routers/events.py
 LionAPI/services/__init__.py
 LionAPI/services/database.py
+LionAPI/services/shots.py
 LionAPI/services/sofascore_scrapes.py
 tests/test_main.py
 tests/tests.py
