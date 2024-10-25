@@ -10,13 +10,14 @@ the future
 ```
 from LionAPI import get_shots
 df = get_shots("Liverpool","Chelsea","2024-10-20")
-
+```
 - Query match events with a date range
-#example usage
+example usage
+```
 from LionAPI import query_events
 events = query_events("2024-10-19","2024-10-23")
 print(events)
-
+```
 ## Installation
 
 You can install the package using pip:
