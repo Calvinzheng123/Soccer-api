@@ -1,3 +1,3 @@
-LionAPI.egg-info
-build/lib
-dist
+LionAPI.egg-info/
+build/lib/
+dist/
