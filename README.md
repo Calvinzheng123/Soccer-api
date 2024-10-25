@@ -7,6 +7,7 @@ the future
 
 - Fetch detailed shot data for specific matches.
 - Query matches across a date range
+```
 from LionAPI import get_shots
 df = get_shots("Liverpool","Chelsea","2024-10-20")```
 
