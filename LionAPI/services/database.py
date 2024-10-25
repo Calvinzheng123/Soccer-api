@@ -5,10 +5,10 @@ import pandas as pd
 def create_connection():
     try:
         connection = mysql.connector.connect(
-            host='soccer-api.c9sauo86m8mu.us-east-2.rds.amazonaws.com',
-            user='root',    
-            password='Zheng123!',  
-            database='soccer_api'      
+            host='***',
+            user='***',    
+            password='***',  
+            database='***'      
         )
         if connection.is_connected():
             print("Connection successful")
