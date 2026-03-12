@@ -1,28 +1,48 @@
 # LionAPI
 
-LionAPI is a FastAPI application designed to provide soccer data through a API and SQL Database. It allows users to retrieve detailed information about soccer matches, including shot data, teams, and events. Plan to update to have more features in
-the future
+LionAPI is a FastAPI application and Python package for pulling soccer match data from SofaScore and storing match metadata locally.
 
-## Features
-
-- Fetch detailed shot data for specific matches.
-```
-from LionAPI import get_shots
-df = get_shots("Liverpool","Chelsea","2024-10-20")
-```
-- Query match events with a date range
-```
-from LionAPI import query_events
-events = query_events("2024-10-19","2024-10-23")
-print(events)
-```
-- Get match overview stats of a game
-  ```
-  from LionAPI import get_stats
-  stats = get_stats("Liverpool","Chelsea","2024-10-20")
-## Installation
-
-You can install the package using pip:
+## Local Setup
 
 ```bash
-pip install LionAPI
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn LionAPI.app.main:app --reload
+```
+
+The API now uses a local SQLite database file instead of AWS/RDS. By default it creates:
+
+```bash
+./lionapi.db
+```
+
+You can override that path with:
+
+```bash
+export LIONAPI_DB_PATH=/full/path/to/lionapi.db
+```
+
+## Example Usage
+
+```python
+from LionAPI import get_shots, query_events
+
+events = query_events("2024-10-19", "2024-10-23")
+shots = get_shots("Liverpool", "Chelsea", "2024-10-20")
+```
+
+To populate local event data, call the API route first:
+
+```bash
+curl "http://127.0.0.1:8000/events/?start_date=2024-10-19&end_date=2024-10-23"
+```
+
+## Current SofaScore Status
+
+As of March 12, 2026, direct server-side requests to the two SofaScore endpoints used here return HTTP `403` from this environment:
+
+- `/api/v1/sport/football/scheduled-events/{date}`
+- `/api/v1/event/{event_id}/shotmap`
+
+The package now reports that clearly, but live event ingestion may require a different data source or a browser-automation based fetcher if SofaScore keeps blocking non-browser clients.

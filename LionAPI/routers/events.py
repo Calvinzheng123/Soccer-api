@@ -19,6 +19,8 @@ async def get_events(start_date: str, end_date: str):
             insert_event(event)
 
         return events  
+    except HTTPException:
+        raise
     except Exception as e:
         print(f"Error occurred: {str(e)}")  
         raise HTTPException(status_code=500, detail=str(e))

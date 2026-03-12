@@ -7,8 +7,8 @@ setup(
     install_requires=[
         'fastapi',
         'uvicorn',
-        'mysql-connector-python',
-        'requests'
+        'requests',
+        'pandas'
     ],
     author='Calvin Zheng',
     description='A FastAPI for soccer data',

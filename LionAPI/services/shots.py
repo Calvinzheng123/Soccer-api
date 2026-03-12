@@ -1,8 +1,6 @@
-import unicodedata
 from LionAPI.services.database import create_connection
-import requests
+from LionAPI.services.sofascore_client import fetch_json
 import pandas as pd
-from mysql.connector import Error
 
 def get_shots(home_team, away_team, match_date):
     """
@@ -18,13 +16,12 @@ def get_shots(home_team, away_team, match_date):
     """
     connection = create_connection()
     if connection is not None:
-        cursor = connection.cursor(dictionary=True)
+        cursor = connection.cursor()
         try:
-
             query = """
                 SELECT event_id
                 FROM events
-                WHERE home_team = %s AND away_team = %s AND event_date = %s;
+                WHERE home_team = ? AND away_team = ? AND event_date = ?;
             """
             cursor.execute(query, (home_team, away_team, match_date))
             result = cursor.fetchone()
@@ -33,14 +30,11 @@ def get_shots(home_team, away_team, match_date):
                 print("No game found for the given parameters.")
                 return None
             
-            event_id = result['event_id']
+            event_id = result["event_id"]
             url = f"https://sofascore.com/api/v1/event/{event_id}/shotmap"
 
             try:
-                response = requests.get(url)
-                response.raise_for_status()  
-
-                shots = response.json()
+                shots = fetch_json(url)
                 if 'shotmap' not in shots:
                     print("Invalid response structure.")
                     return None
@@ -63,11 +57,11 @@ def get_shots(home_team, away_team, match_date):
                 result_df = df[selected_columns]
                 return result_df
 
-            except requests.exceptions.RequestException as e:
+            except Exception as e:
                 print(f"Request error: {e}")
                 return None
 
-        except Error as e:
+        except Exception as e:
             print(f"Error querying data: {e}")
             return None
 
